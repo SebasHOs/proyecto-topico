@@ -1,35 +1,34 @@
 window.onload = init;
 
 function init() {
+    const registerBtn = document.querySelector('.btn-secondary');
+    const loginBtn = document.querySelector('.btn-primary');
 
-    document.querySelector('.btn-secondary')
-    .addEventListener('click', function () {
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            window.location.href = 'register.html';
+        });
+    }
 
-        window.location.href = 'register.html';
-
-    });
-
-    document.querySelector('.btn-primary')
-    .addEventListener('click', login);
+    if (loginBtn) {
+        loginBtn.addEventListener('click', handleLogin);
+    }
 }
 
-async function login() {
+async function handleLogin() {
+    const mail = document.getElementById('input-mail').value.trim();
+    const password = document.getElementById('input-password').value.trim();
 
-    var mail = document.getElementById('input-mail').value;
-
-    var password = document.getElementById('input-password').value;
+    if (!mail || !password) {
+        alert('Por favor completa todos los campos');
+        return;
+    }
 
     try {
-
-        await auth.signInWithEmailAndPassword(mail, password);
-
-        alert('Login correcto');
-
+        const result = await window.login(mail, password);
+        alert(result.message || 'Login correcto');
         window.location.href = 'mapa.html';
-
     } catch (error) {
-
-        alert(error.message);
-
+        alert(error.message || 'Error al iniciar sesión');
     }
 }
