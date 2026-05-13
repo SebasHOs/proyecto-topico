@@ -25,10 +25,12 @@ async function handleLogin() {
     }
 
     try {
+
         const result = await window.login(mail, password);
         alert(result.message || 'Login correcto');
         window.location.href = 'mapa.html';
+
     } catch (error) {
-        alert(error.message || 'Error al iniciar sesión');
+        alert(error.message);
     }
 }

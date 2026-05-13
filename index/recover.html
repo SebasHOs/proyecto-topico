@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script defer src="../js/auth.js"></script>
+    <script defer src="../js/recover.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3 text-center">
+                <h1>Recuperar contraseña</h1>
+                <p>Ingresa tu correo electrónico y te enviaremos un enlace para restablecerla.</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+                <form id="recover-form">
+                    <div class="form-group">
+                        <label for="input-mail">Correo electrónico</label>
+                        <input type="email" class="form-control" id="input-mail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar enlace</button>
+                    <a href="login.html" class="btn btn-link mt-3">Volver al inicio de sesión</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

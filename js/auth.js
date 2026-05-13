@@ -73,6 +73,31 @@ function getCurrentUser() {
     return auth.currentUser;
 }
 
+function recoverPassword(email) {
+    return new Promise((resolve, reject) => {
+        const { auth, sendPasswordResetEmail } = window.firebaseAuth;
+        const actionCodeSettings = {
+            url: 'http://127.0.0.1:5500/index/login.html',
+            handleCodeInApp: false
+        };
+
+        sendPasswordResetEmail(auth, email, actionCodeSettings)
+            .then(() => {
+                resolve({
+                    success: true,
+                    message: "Correo de recuperación enviado"
+                });
+            })
+            .catch((error) => {
+                console.error('Firebase sendPasswordResetEmail error:', error);
+                reject({
+                    success: false,
+                    message: getErrorMessage(error.code) || error.message || "Error al enviar correo de recuperación"
+                });
+            });
+    });
+}
+
 function getErrorMessage(code) {
     const messages = {
         'auth/invalid-email': 'El correo electrónico no es válido',
@@ -87,3 +112,5 @@ function getErrorMessage(code) {
 
     return messages[code] || 'Error: ' + code;
 }
+
+window.recoverPassword = recoverPassword;

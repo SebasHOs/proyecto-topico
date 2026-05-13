@@ -3,6 +3,7 @@ import {
     getAuth, 
     signInWithEmailAndPassword, 
     createUserWithEmailAndPassword,
+    sendPasswordResetEmail,
     signOut,
     onAuthStateChanged 
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
@@ -32,6 +33,7 @@ window.firebaseAuth = {
     db,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
+    sendPasswordResetEmail,
     signOut,
     onAuthStateChanged,
     doc,
