@@ -13,13 +13,15 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC9n8l3sXo2m1a7e5v6g7h8i9j0k1l2m3",
-    authDomain: "your-app.firebaseapp.com",
-    projectId: "your-app",
-    storageBucket: "your-app.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abcdef123456"
+  apiKey: "AIzaSyB9Ho9vmaCAJMVcgOsfiToxNEXLcQzswpo",
+  authDomain: "proyecto-web-reportes.firebaseapp.com",
+  databaseURL: "https://proyecto-web-reportes-default-rtdb.firebaseio.com",
+  projectId: "proyecto-web-reportes",
+  storageBucket: "proyecto-web-reportes.firebasestorage.app",
+  messagingSenderId: "853031683883",
+  appId: "1:853031683883:web:369839606f3a059e54a76e"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

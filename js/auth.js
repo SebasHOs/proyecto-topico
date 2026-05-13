@@ -23,16 +23,18 @@ function register(email, password, name) {
                     });
                 })
                 .catch((error) => {
+                    console.error('Firestore save error:', error);
                     reject({
                         success: false,
-                        message: "Error al crear usuario"
+                        message: getErrorMessage(error.code) || error.message || "Error al crear usuario"
                     });
                 });
             })
             .catch((error) => {
+                console.error('Firebase createUserWithEmailAndPassword error:', error);
                 reject({
                     success: false,
-                    message: "Error al crear usuario"
+                    message: getErrorMessage(error.code) || error.message || "Error al crear usuario"
                 });
             });
     });
@@ -52,9 +54,10 @@ function login(email, password) {
                 });
             })
             .catch((error) => {
+                console.error('Firebase signInWithEmailAndPassword error:', error);
                 reject({
                     success: false,
-                    message: "Correo o contraseña incorrectos"
+                    message: getErrorMessage(error.code) || error.message || "Correo o contraseña incorrectos"
                 });
             });
     });

@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoz6zek20FPHIGiKTtG7pBZp7O7pEcvMk&callback=initMap"></script>
+    <!-- Firebase config and auth helpers -->
+    <script type="module" src="../js/firebase.js"></script>
+    <script defer src="../js/auth.js"></script>
+    <script defer src="../js/mapa.js"></script>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mt-3">Mapa Interactivo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Map container -->
+                <div id="map" style="height: 600px; width: 100%;"></div>
+            </div>
+        </div>
+        <div class="row mt-3">
             <div class="col-12 text-center">
-                <h1>Bienvenido</h1>
-                <p>Has iniciado sesión correctamente.</p>
-                <a href="login.html" class="btn btn-secondary">Cerrar sesión</a>
+                <a href="login.html" class="btn btn-secondary">Cerrar sesiï¿½n</a>
             </div>
         </div>
     </div>
