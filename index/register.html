@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script type="module">
+        import('./js/firebase.js').then(() => {
+            // Firebase iniciado
+        });
+    </script>
+
+    <!-- Lógica -->
+    <script src="./js/auth.js"></script>
+    <script src="./js/registro.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h1>Registro</h1>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+
+                <div class="form-group">
+                    <label for="input-mail">Correo electrónico</label>
+                    <input type="email" class="form-control" id="input-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="input-name">Nombre</label>
+                    <input type="text" class="form-control" id="input-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="input-password">Contraseña</label>
+                    <input type="password" class="form-control" id="input-password">
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary" id="btn-register">Registrarme</button>
+                    <button type="button" class="btn btn-secondary" id="btn-login">Iniciar sesión</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

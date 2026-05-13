@@ -5,28 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Login</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Firebase (VERSIÓN SIMPLE) -->
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-    <!-- Config Firebase -->
+    <!-- Config -->
     <script src="./js/firebase-config.js"></script>
 
-    <!-- Lógica -->
-    <script src="./js/auth.js"></script>
-    <script src="./js/registro.js"></script>
+    <!-- Login -->
+    <script defer src="./js/login.js"></script>
 </head>
 
 <body>
+
     <div class="container">
+
         <div class="row mt-5">
             <div class="col-6 offset-3">
-                <h1>Registro</h1>
+                <h1>Inicia sesión</h1>
             </div>
         </div>
 
@@ -35,27 +36,37 @@
 
                 <div class="form-group">
                     <label for="input-mail">Correo electrónico</label>
-                    <input type="email" class="form-control" id="input-mail">
-                </div>
-
-                <div class="form-group">
-                    <label for="input-name">Nombre</label>
-                    <input type="text" class="form-control" id="input-name">
+                    <input type="email"
+                        class="form-control"
+                        id="input-mail">
                 </div>
 
                 <div class="form-group">
                     <label for="input-password">Contraseña</label>
-                    <input type="password" class="form-control" id="input-password">
+                    <input type="password"
+                        class="form-control"
+                        id="input-password">
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary" id="btn-register">Registrarme</button>
-                    <button type="button" class="btn btn-secondary" id="btn-login">Iniciar sesión</button>
+                    <button type="button"
+                        class="btn btn-primary"
+                        id="btn-login">
+                        Entrar
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-secondary"
+                        id="btn-register">
+                        Registro
+                    </button>
                 </div>
 
             </div>
         </div>
+
     </div>
+
 </body>
 
 </html>

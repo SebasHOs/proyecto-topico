@@ -2,7 +2,7 @@ window.onload = init;
 
 function init() {
     document.querySelector('.btn-secondary').addEventListener('click', function() {
-        window.location.href = 'signin.html';
+        window.location.href = 'register.html';
     });
 
     document.querySelector('.btn-primary').addEventListener('click', login);
@@ -24,4 +24,4 @@ function login() {
     
             }
         });
-    }
+    } 
