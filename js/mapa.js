@@ -5,6 +5,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: defaultLocation,
+        mapId: "D616dc0d71d24a8a8115ab2a5" // Required for AdvancedMarkerElement
     });
 
     const createMarker = (position, title) => {
