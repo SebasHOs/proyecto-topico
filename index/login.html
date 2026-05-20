@@ -1,58 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
     <!-- Firebase config and auth helpers -->
     <script type="module" src="../js/firebase.js"></script>
     <script defer src="../js/auth.js"></script>
     <script defer src="../js/login.js"></script>
-
-
 </head>
-
 <body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-6 offset-3">
-                <h1>Inicia sesión</h1>
-            </div>
+    <div class="header">
+        <div class="container-custom">
+            <h1 class="header-title">Sistema de Reportes</h1>
+            <p class="header-subtitle">Inicia sesión para acceder al mapa y reportar incidencias.</p>
         </div>
-        <div class="row align-items-center">
-            <div class="col-6 offset-3">
+    </div>
+
+    <div class="container-custom">
+        <div class="page-card mx-auto" style="max-width: 560px;">
+            <h2 class="section-title">Inicia sesión</h2>
+            <div class="form-card">
                 <div class="form-group">
                     <label for="input-mail">Correo electrónico</label>
-                    <input type="email"
-                        class="form-control"
-                        id="input-mail">
+                    <input type="email" class="form-control" id="input-mail">
                 </div>
                 <div class="form-group">
                     <label for="input-password">Contraseña</label>
-                    <input type="password"
-                        class="form-control"
-                        id="input-password">
- <p>
-    <a href="recover.html">
-        ¿Olvidaste tu contraseña? Recupérala aquí.
-    </a>
-</p>
+                    <input type="password" class="form-control" id="input-password">
                 </div>
-                <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary">
-                        Entrar
-                    </button>
-                    <button class="btn btn-secondary">
-                        Registro
-                    </button>
+                <p class="form-note">
+                    <a href="recover.html">¿Olvidaste tu contraseña? Recupérala aquí.</a>
+                </p>
+                <div class="form-actions">
+                    <button class="btn btn-primary">Entrar</button>
+                    <a href="register.html" class="btn btn-secondary">Registro</a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Sistema de Reportes. Todos los derechos reservados.</p>
     </div>
 </body>
 </html>

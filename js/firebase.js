@@ -10,7 +10,13 @@ import {
 import { 
     getFirestore, 
     doc, 
-    setDoc 
+    setDoc,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    where,
+    orderBy
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -37,5 +43,11 @@ window.firebaseAuth = {
     signOut,
     onAuthStateChanged,
     doc,
-    setDoc
+    setDoc,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    where,
+    orderBy
 };

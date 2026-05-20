@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Incidencias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Firebase config and auth helpers -->
+    <script type="module" src="../js/firebase.js"></script>
+    <script defer src="../js/auth.js"></script>
+    <script defer src="../js/reportes.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>📋 Reportes de Incidencias</h1>
+            <p>Sistema de Gestión de Reportes</p>
+        </div>
+    </div>
+
+    <div class="container-custom">
+        <a href="mapa.html" class="btn-volver">← Volver al Inicio</a>
+
+        <div class="section-title">Mis Reportes</div>
+
+        <div id="loadingContainer" class="loading">
+            <div class="spinner"></div>
+            <p>Cargando reportes...</p>
+        </div>
+
+        <div id="emptyContainer" class="empty-state" style="display: none;">
+            <div class="empty-state-icon">📭</div>
+            <h3>No hay reportes aún</h3>
+            <p>Dirígete al mapa y crea tu primer reporte de incidencia</p>
+        </div>
+
+        <div id="tableContainer" class="table-container" style="display: none;">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tipo de Incidencia</th>
+                        <th>Descripción</th>
+                        <th>Dirección</th>
+                        <th>Fecha y Hora</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="reportesBody">
+                    <!-- Los reportes se cargarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Sistema de Reportes. Todos los derechos reservados.</p>
+    </div>
+</body>
+</html>

@@ -7,21 +7,24 @@
 
     <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
     <script type="module" src="../js/firebase.js"></script>
     <script defer src="../js/auth.js"></script>
     <script defer src="../js/recover.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-6 offset-3 text-center">
-                <h1>Recuperar contraseña</h1>
-                <p>Ingresa tu correo electrónico y te enviaremos un enlace para restablecerla.</p>
-            </div>
+    <div class="header">
+        <div class="container-custom">
+            <h1 class="header-title">Recuperar contraseña</h1>
+            <p class="header-subtitle">Ingresa tu correo para recibir un enlace de restablecimiento.</p>
         </div>
-        <div class="row align-items-center">
-            <div class="col-6 offset-3">
+    </div>
+
+    <div class="container-custom">
+        <div class="page-card mx-auto" style="max-width: 560px;">
+            <h2 class="section-title">Recuperación de cuenta</h2>
+            <div class="form-card">
                 <form id="recover-form">
                     <div class="form-group">
                         <label for="input-mail">Correo electrónico</label>
@@ -32,6 +35,10 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Sistema de Reportes. Todos los derechos reservados.</p>
     </div>
 </body>
 </html>

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Google Maps API -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoz6zek20FPHIGiKTtG7pBZp7O7pEcvMk&callback=initMap&v=weekly&loading=async&libraries=marker"></script>
     <!-- Firebase config and auth helpers -->
@@ -13,24 +14,55 @@
     <script defer src="../js/mapa.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center mt-3">Mapa Interactivo</h1>
-            </div>
+    <div class="header">
+        <div class="container-custom">
+            <h1 class="header-title">Mapa Interactivo</h1>
+            <p class="header-subtitle">Doble clic en el mapa para reportar una incidencia desde la ubicaciÃ³n exacta.</p>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <!-- Map container -->
-                <div id="map" style="height: 600px; width: 100%;"></div>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 d-flex justify-content-center align-items-center gap-7">
-                <a href="login.html" class="btn btn-secondary">Cerrar sesión</a>
-                <img src="./assets/log-in.png" width="80" alt="Icono de cerrar sesión">
+    </div>
+
+    <div class="container-custom">
+        <div class="page-card">
+            <div id="map"></div>
+            <div class="form-actions mt-4">
+                <a href="login.html" class="btn btn-secondary">Cerrar sesiÃ³n</a>
+                <a href="reportes.html" class="btn btn-primary">Ver reportes</a>
             </div>
         </div>
     </div>
+
+    <div class="container-custom">
+        <div id="incidenceModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-title">Selecciona el tipo de incidencia</div>
+                <div class="incidence-options">
+                    <button class="incidence-btn" data-type="Fugas">Fugas</button>
+                    <button class="incidence-btn" data-type="Accidentes">Accidentes</button>
+                    <button class="incidence-btn" data-type="Otro tipo">Otro tipo</button>
+                </div>
+                <button id="cancelIncidenceBtn" class="btn btn-danger">Cancelar</button>
+            </div>
+        </div>
+
+        <div id="descriptionModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-title">Describe el problema</div>
+                <textarea id="descriptionInput" placeholder="Describe el problema aquÃ­..."></textarea>
+                <div class="char-count">
+                    <span id="charCount">0</span>/30 caracteres mÃ­nimos
+                </div>
+                <button id="submitBtn" class="btn btn-success" disabled>Hecho</button>
+            </div>
+        </div>
+
+        <div id="successMessage" class="success-message">
+            Reporte enviado. Puedes revisar su estado con el botÃ³n "Ver Reportes".
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Sistema de Reportes. Todos los derechos reservados.</p>
+    </div>
 </body>
 </html>
+
