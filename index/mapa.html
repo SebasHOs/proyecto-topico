@@ -6,8 +6,6 @@
     <title>Mapa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <!-- Google Maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoz6zek20FPHIGiKTtG7pBZp7O7pEcvMk&callback=initMap&v=weekly&loading=async&libraries=marker"></script>
     <!-- Firebase config and auth helpers -->
     <script type="module" src="../js/firebase.js"></script>
     <script defer src="../js/auth.js"></script>
@@ -25,7 +23,7 @@
         <div class="page-card">
             <div id="map"></div>
             <div class="form-actions mt-4">
-                <a href="login.html" class="btn btn-secondary">Cerrar sesiÃ³n</a>
+                <a href="login.html" class="btn btn-secondary">Cerrar sesión</a>
                 <a href="reportes.html" class="btn btn-primary">Ver reportes</a>
             </div>
         </div>
@@ -34,35 +32,48 @@
     <div class="container-custom">
         <div id="incidenceModal" class="modal-overlay">
             <div class="modal-content">
+                <button id="cancelIncidenceBtn" class="close-btn">X</button>
                 <div class="modal-title">Selecciona el tipo de incidencia</div>
                 <div class="incidence-options">
                     <button class="incidence-btn" data-type="Fugas">Fugas</button>
                     <button class="incidence-btn" data-type="Accidentes">Accidentes</button>
                     <button class="incidence-btn" data-type="Otro tipo">Otro tipo</button>
                 </div>
-                <button id="cancelIncidenceBtn" class="btn btn-danger">Cancelar</button>
             </div>
         </div>
 
         <div id="descriptionModal" class="modal-overlay">
             <div class="modal-content">
+    <button id="closeIncidenceModal" class="close-btn">
+        X
+    </button>
                 <div class="modal-title">Describe el problema</div>
-                <textarea id="descriptionInput" placeholder="Describe el problema aquÃ­..."></textarea>
+                <textarea id="descriptionInput" placeholder="Describe el problema aquí..."></textarea>
+                 <div class="modal-title">Ingresa la dirección.</div>
+                <textarea id="addressInput" placeholder="Dirección actual..."></textarea>
                 <div class="char-count">
-                    <span id="charCount">0</span>/30 caracteres mÃ­nimos
+                    <span id="charCount">0</span>/30 caracteres mínimos
                 </div>
                 <button id="submitBtn" class="btn btn-success" disabled>Hecho</button>
+                <button id="backToOptionsBtn" class="btn btn-primary mt-2">
+    Volver al menú de opciones
+</button>
             </div>
         </div>
 
         <div id="successMessage" class="success-message">
-            Reporte enviado. Puedes revisar su estado con el botÃ³n "Ver Reportes".
+            Reporte enviado. Puedes revisar su estado con el botón "Ver Reportes".
         </div>
     </div>
 
     <div class="footer">
         <p>&copy; 2024 Sistema de Reportes. Todos los derechos reservados.</p>
     </div>
+
+    <!-- Google Maps API al final para que initMap ya esté disponible -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoz6zek20FPHIGiKTtG7pBZp7O7pEcvMk&callback=initMap&v=weekly&loading=async&libraries=marker"></script>
+
+
 </body>
 </html>
 

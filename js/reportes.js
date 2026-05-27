@@ -78,11 +78,10 @@ async function cargarReportes(userId) {
                 minute: '2-digit'
             });
 
-            const locationText = reporte.address
+            const locationText = reporte.manualAddress
+                || reporte.address
                 || reporte.location?.address
-                || (reporte.location
-                    ? `Lat: ${reporte.location.lat.toFixed(4)} | Lng: ${reporte.location.lng.toFixed(4)}`
-                    : 'No disponible');
+                || 'No disponible';
 
             const row = document.createElement('tr');
             row.innerHTML = `

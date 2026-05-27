@@ -127,39 +127,65 @@ function showIncidenceModal() {
 function showDescriptionModal() {
     const modal = document.getElementById('descriptionModal');
     const input = document.getElementById('descriptionInput');
+    const addressInput = document.getElementById('addressInput');
     const submitBtn = document.getElementById('submitBtn');
     const charCount = document.getElementById('charCount');
 
-    // Clear the input
+    // Clear the inputs
     input.value = '';
+    addressInput.value = '';
     charCount.textContent = '0';
     submitBtn.disabled = true;
 
-    // Add event listener for character count and validation
-    input.onkeyup = () => {
-        const length = input.value.length;
-        charCount.textContent = length;
-
-        if (length >= 30) {
-            submitBtn.disabled = false;
-        } else {
-            submitBtn.disabled = true;
-        }
+    // Validate both fields before enabling submit
+    const validateInputs = () => {
+        const descLength = input.value.length;
+        charCount.textContent = descLength;
+        const addressFilled = addressInput.value.trim().length > 0;
+        submitBtn.disabled = !(descLength >= 30 && addressFilled);
     };
+
+    input.onkeyup = validateInputs;
+    addressInput.onkeyup = validateInputs;
 
     // Add submit button listener
     submitBtn.onclick = () => {
-        submitReport(input.value);
+        const manualAddress = addressInput.value.trim();
+        submitReport(input.value, manualAddress);
         modal.classList.remove('active');
         input.value = '';
+        addressInput.value = '';
         charCount.textContent = '0';
     };
+
+    // Botón cerrar: cierra todo el flujo
+    const closeBtn = document.getElementById('closeIncidenceModal');
+    if (closeBtn) {
+        closeBtn.onclick = () => {
+            modal.classList.remove('active');
+            input.value = '';
+            addressInput.value = '';
+            charCount.textContent = '0';
+        };
+    }
+
+    // Botón volver: regresa al menú de opciones de incidencia
+    const backBtn = document.getElementById('backToOptionsBtn');
+    if (backBtn) {
+        backBtn.onclick = () => {
+            modal.classList.remove('active');
+            input.value = '';
+            addressInput.value = '';
+            charCount.textContent = '0';
+            showIncidenceModal();
+        };
+    }
 
     // Show the modal
     modal.classList.add('active');
 }
 
-function submitReport(description) {
+function submitReport(description, manualAddress) {
     // Obtener el usuario actual
     const user = window.firebaseAuth.auth.currentUser;
     
@@ -171,6 +197,7 @@ function submitReport(description) {
     const report = {
         type: window.selectedIncidenceType,
         description: description,
+        manualAddress: manualAddress || '',
         location: {
             lat: window.reportLocation?.lat,
             lng: window.reportLocation?.lng,
